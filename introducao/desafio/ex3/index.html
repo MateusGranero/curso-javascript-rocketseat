@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <title>Curso Javascript - Desafio 1</title>
+  </head>
+  <body>
+    <script>
+      function temHabilidade(skills) {
+        var index = skills.indexOf('Javascript');
+
+        return index > -1 ? true : false;
+      }
+
+      var skills = ['Javascript', 'ReactJS', 'React Native'];
+      var resultado = temHabilidade(skills);
+
+      console.log(resultado);
+    </script>
+  </body>
+</html>
