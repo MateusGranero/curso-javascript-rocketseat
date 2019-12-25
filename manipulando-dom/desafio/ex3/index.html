@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>Curso Javascript - Desafio 1</title>
+  </head>
+  <body>
+    <div id="app">
+      <ul id="lista"></ul>
+    </div>
+
+    <script>
+      var nomes = ['Diego', 'Gabriel', 'Lucas'];
+      var listElement = document.querySelector('#lista');
+
+      function addNome(nome) {
+        var listItem = document.createElement('li');
+        var nome = document.createTextNode(nome);
+
+        listItem.appendChild(nome);
+        listElement.appendChild(listItem);
+      }
+
+      for (let i = 0; i < nomes.length; i++) {
+        addNome(nomes[i]);
+      }
+    </script>
+  </body>
+</html>
