@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>Curso Javascript - Desafio 1</title>
+  </head>
+  <body>
+    <div id="app">
+      <input name="nome" />
+    </div>
+
+    <script>
+      var linkElement = document.createElement('a');
+
+      linkElement.setAttribute('href', 'https://github.com/MateusGranero/');
+
+      var textElement = document.createTextNode(
+        'Acessar github Mateus Granero'
+      );
+
+      linkElement.appendChild(textElement);
+
+      var containerElement = document.querySelector('div#app');
+      containerElement.appendChild(linkElement);
+
+      var inputElement = document.querySelector('input');
+      containerElement.removeChild(inputElement);
+    </script>
+  </body>
+</html>
