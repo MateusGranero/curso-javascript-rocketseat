@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <title>Curso Javascript - Desafio 1</title>
+  </head>
+  <body>
+    <div id="app">
+      <button>Adicionar</button>
+    </div>
+
+    <script>
+      var btnElement = document.querySelector('button');
+      var containerElement = document.querySelector('div#app');
+
+      function getRandomColor() {
+        var letters = '0123456789ABCDEF';
+        var color = '#';
+        for (var i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+      }
+
+      btnElement.onclick = function() {
+        var boxElement = document.createElement('div');
+
+        boxElement.style.width = 100;
+        boxElement.style.height = 100;
+        boxElement.style.backgroundColor = '#f00';
+
+        boxElement.onmouseover = function() {
+          boxElement.style.backgroundColor = getRandomColor();
+        };
+
+        containerElement.appendChild(boxElement);
+      };
+    </script>
+  </body>
+</html>
