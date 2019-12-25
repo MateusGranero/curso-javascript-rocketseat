@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <title>Curso Javascript - Desafio 1</title>
+  </head>
+  <body>
+    <div id="app">
+      <input type="text" id="nome" />
+      <button id="botao">Adicionar</button>
+      <ul id="lista"></ul>
+    </div>
+
+    <script>
+      var btnElement = document.querySelector('#botao');
+      var inputElement = document.querySelector('#nome');
+      var listElement = document.querySelector('#lista');
+
+      function addNome(nome) {
+        var listItem = document.createElement('li');
+        var nome = document.createTextNode(nome);
+
+        listItem.appendChild(nome);
+        listElement.appendChild(listItem);
+
+        inputElement.value = '';
+      }
+
+      btnElement.onclick = function() {
+        addNome(inputElement.value);
+      };
+    </script>
+  </body>
+</html>
