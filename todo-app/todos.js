@@ -2,7 +2,7 @@ var listElement = document.querySelector('#app ul');
 var inputElement = document.querySelector('#app input');
 var btnElement = document.querySelector('#app button');
 
-var todos = ['Fazer café', 'Estudar Javascript', 'Alguma outra coisa'];
+var todos = JSON.parse(localStorage.getItem('list_todos')) || [];
 
 function renderTodos() {
   listElement.innerHTML = '';
@@ -32,6 +32,7 @@ function addTodo() {
   todos.push(todoText);
   inputElement.value = '';
 
+  saveToStorage();
   renderTodos();
 }
 
@@ -39,7 +40,13 @@ btnElement.onclick = addTodo;
 
 function deleteTodo(pos) {
   todos.splice(pos, 1);
+
+  saveToStorage();
   renderTodos();
+}
+
+function saveToStorage() {
+  localStorage.setItem('list_todos', JSON.stringify(todos));
 }
 
 renderTodos();
